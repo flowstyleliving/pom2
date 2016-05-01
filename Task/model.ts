@@ -7,6 +7,7 @@ let taskSchema = new mongoose.Schema({
   datePosted: {type: Number},
   dateDue: {type: Number},
   color: {type: String, default: 'lightblue'},
+  complete: {type: Boolean, default: false},
 
   user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   notes: [{type: mongoose.Schema.Types.ObjectId, ref: 'Note'}]

@@ -5,6 +5,7 @@ namespace app.i {
     datePosted: number;
     dateDue: number;
     color: string;
+    complete: boolean;
 
     user: (string | IUser);
     notes: [string | INote]

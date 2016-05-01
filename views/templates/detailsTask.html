@@ -1,6 +1,8 @@
 <h1>Details of {{vm.task.title}}</h1>
 <h3>Color: {{vm.task.color}}</h3>
-<br /><br />
+<br />
+<button ui-sref="Update Task({id: vm.task._id})">Edit</button>
+<br />
 
 <h5>Notes</h5>
 <center>
@@ -11,12 +13,20 @@
   </form>
   <br />
   <br />
-  <br />
 
   <div ng-repeat="n in vm.task.notes">
     <div class="row">
       <strong>Note Title:</strong> {{n.title}}
     </div>
+    <br />
+      <!-- <button ng-click="edit = true">Edit</button>
+      <br />
+      <form ng-submit="vm.updateNote(n)" ng-show="edit">
+        <input type="text" ng-model="vm.note.title" placeholder="note.title"/>
+        <br />
+        <button type='submit'>Submit</button>
+      </form>
+    <br /> -->
     <button ng-click="vm.removeNote(n)">Remove</button>
   </div>
 </center>

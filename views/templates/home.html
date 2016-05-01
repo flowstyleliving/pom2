@@ -1,9 +1,12 @@
-<h1>Home Page</h1>
-
 <div class="container">
+  <center>
   <div ng-repeat="t in vm.tasks">
-    <span>{{t.title}}</span>
-    <span>{{t.color}}</span>
-    <button ui-sref="Update Task({id: t._id})">Edit</button>
+    <div class="row" style="background-color:{{t.color}}; width:450px; padding: 20px;">
+      <input type="checkbox" ng-checked="t.complete" style="float: left"/>
+      <h3>{{t.title}}</h3>
+      <button class='btn-info' ui-sref="Details Task({id: t._id})" style="float: right;">Details</button>
+    </div>
+    <br />
   </div>
+  </center>
 </div>

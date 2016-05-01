@@ -6,16 +6,23 @@
   <meta charset="utf-8">
   <base href="/" />
   <link rel="stylesheet" href="/scripts/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/journal/bootstrap.min.css">
   <link rel="stylesheet" href="/css/site.css"/>
 </head>
 
-<body>
-  <div>
-    <a ui-sref="Home">Home</a>
-    <a ui-sref="Create Task">Add(+)</a>
+<body ng-controller='GlobalController as global'>
+  <div clas="container well">
+    <ul>
+      <li><a ui-sref="Home"><span >Home</span></a></li>
+      <li><a ui-sref="Create Task" ng-show="global.status._id"><span>Add(+)</span></a></li>
+      <li style="float:right" ng-show="!global.status._id"><a ui-sref="Login">login</a></li>
+      <li style="float:right" ng-show="global.status._id"><a ng-click="global.logout()">logout</a></li>
+    </ul>
   </div>
 
-  <ui-view></ui-view>
+  <div class="container">
+    <ui-view></ui-view>
+  </div>
 
   <script src="/scripts/angular/angular.min.js"></script>
   <script src="/scripts/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -25,9 +32,11 @@
   <script src="/scripts/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
   <script src="/js/app.js"></script>
+  <script src="/js/Services/AuthInterceptor.js"></script>
   <script src="/js/Services/TaskService.js"></script>
   <script src="/js/Services/NoteService.js"></script>
   <script src="/js/Services/UserService.js"></script>
+  <script src="/js/controllers/GlobalController.js"></script>
   <script src="/js/Controllers/HomeController.js"></script>
   <script src="/js/Controllers/UserLoginController.js"></script>
   <script src="/js/Controllers/UserRegisterController.js"></script>

@@ -18,6 +18,12 @@ namespace app.Controllers {
       });
     }
 
+    public updateNote(n: app.i.INote) {
+      this.NoteService.update(n._id).then(() => {
+        this.$state.go('Details Task({id: task._id})')
+      })
+    }
+
     constructor(
       private TaskService: app.Services.TaskService,
       private NoteService: app.Services.NoteService,
