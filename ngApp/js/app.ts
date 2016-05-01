@@ -26,6 +26,16 @@ namespace app {
       templateUrl: '/templates/detailsTask.html',
       controller: 'TaskDetailsController',
       controllerAs: 'vm'
+    }).state('Login', {
+      url: '/login',
+      templateUrl: '/templates/login.html',
+      controller: 'UserLoginController',
+      controllerAs: 'vm'
+    }).state('Register', {
+      url: '/register',
+      templateUrl: '/templates/register.html',
+      controller: 'UserRegisterController',
+      controllerAs: 'vm'
     });
 
     $urlRouterProvider.otherwise('/');
