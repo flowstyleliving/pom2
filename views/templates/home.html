@@ -1,1 +1,9 @@
 <h1>Home Page</h1>
+
+<div class="container">
+  <div ng-repeat="t in vm.tasks">
+    <span>{{t.title}}</span>
+    <span>{{t.color}}</span>
+    <button ui-sref="Update Task({id: t._id})">Edit</button>
+  </div>
+</div>

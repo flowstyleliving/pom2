@@ -34,5 +34,5 @@ namespace app.Services {
     });
     }
   }
-  angular.module('app').controller('TaskService', TaskService);
+  angular.module('app').service('TaskService', TaskService);
 }

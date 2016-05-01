@@ -1,0 +1,15 @@
+<h1>Create Task</h1>
+<br>
+<br>
+<form ng-submit="vm.create(t)">
+  <div class='row'>
+    <input type="text" ng-model="vm.task.title">
+  </div>
+  <div class='row'>
+    <input type="text" ng-model="vm.task.dateDue">
+  </div>
+  <div class='row'>
+    <input type="text" ng-model="vm.task.color">
+  </div>
+  <button type="submit" class="btn-success">Submit</button>
+</form>

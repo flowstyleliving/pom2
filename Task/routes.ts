@@ -17,12 +17,12 @@ router.get('/',controller.getAll);
 router.get('/:id',controller.getOne);
 
 //POST: '/api/v1/tasks'
-router.post('/',auth,controller.create);
+router.post('/',controller.create);
 
 //PUT: '/api/v1/tasks/:id'
-router.put('/:id',auth,controller.update);
+router.put('/:id',controller.update);
 
 //DELETE: '/api/v1/tasks/:id'
-router.delete('/:id',auth,controller.remove);
+router.delete('/:id',controller.remove);
 
 export = router;

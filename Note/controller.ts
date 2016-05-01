@@ -13,7 +13,7 @@ import {Task, ITaskModel} from '../Task/model'
   }
 
   export function create(req:express.Request, res:express.Response, next:Function){
-    req.body.user = req['payload']._id;
+    // req.body.user = req['payload']._id;
     Note.create(req.body, (err, note) => {
       if (err) return next(err);
       Task.update({ _id: note.task }, { $push: { 'notes': note._id } }, (err, result) => {
@@ -24,7 +24,7 @@ import {Task, ITaskModel} from '../Task/model'
 }
 
   export function update(req:express.Request, res:express.Response, next:Function){
-    Task.update({_id:req.params.id, user:req['payload']._id},req.body,(err,numRows:any) => {
+    Task.update({_id:req.params.id},req.body,(err,numRows:any) => {
       if (err) return next(err);
       if (numRows === 0) return next({message:'Unable to update movie entry!', status: 500});
       res.json({message:'This movie entry has been updated!'});
